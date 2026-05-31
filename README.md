@@ -52,7 +52,7 @@ or more links to news articles or official records.
                   Data Center Installation Across the United States},
   year         = {2026},
   version      = {1.0},
-  howpublished = {\url{https://jwklee.github.io/data-center-opposition-tracker/}},
+  howpublished = {\url{https://github.com/jwklee/data-center-opposition-tracker/}},
   note         = {Data through 2026-05-31.
                   Contact: to.jaewook.lee@gmail.com}
 }

@@ -6,9 +6,9 @@ United States, from 2020 through 2026-05-31. Movements are filed at the local
 
 Two pages:
 
-- **[Tracker](https://github.com/jwklee/data-center-opposition-tracker/blob/main/tracker.html)** —
+- **[Tracker](https://jwklee.github.io/data-center-opposition-tracker/tracker.html)** —
   an interactive map and filterable table. Every popup links to a primary news source.
-- **[Profile](https://github.com/jwklee/data-center-opposition-tracker/blob/main/profile.html)** —
+- **[Profile](https://jwklee.github.io/data-center-opposition-tracker/profile.html)** —
   three figures: how the count of new movements has grown year by year, and how
   opposition counties compare to the rest of the country on per-capita income and
   2024 presidential vote.

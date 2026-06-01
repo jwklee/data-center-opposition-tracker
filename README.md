@@ -6,12 +6,8 @@ United States, from 2020 through 2026-05-31. Movements are filed at the local
 
 Two pages:
 
-- **[Tracker](https://jwklee.github.io/data-center-opposition-tracker/tracker.html)** —
-  an interactive map and filterable table. Every popup links to a primary news source.
-- **[Profile](https://jwklee.github.io/data-center-opposition-tracker/profile.html)** —
-  three figures: how the count of new movements has grown year by year, and how
-  opposition counties compare to the rest of the country on per-capita income and
-  2024 presidential vote.
+- **[Tracker](https://jwklee.github.io/data-center-opposition-tracker/tracker.html)** 
+- **[Profile](https://jwklee.github.io/data-center-opposition-tracker/profile.html)** 
 
 ## Methods
 
@@ -52,7 +48,7 @@ or more links to news articles or official records.
                   Data Center Installation Across the United States},
   year         = {2026},
   version      = {1.0},
-  howpublished = {\url{https://github.com/jwklee/data-center-opposition-tracker/}},
+  howpublished = {\url{https://jwklee.github.io/data-center-opposition-tracker/}},
   note         = {Data through 2026-05-31.
                   Contact: to.jaewook.lee@gmail.com}
 }

@@ -1,7 +1,7 @@
 # Data Center Opposition Tracker
 
 A record of organized opposition to data center installation in the
-United States, from 2020 through 2026-05-31. Movements are filed at the local
+United States, from 2022 through 2026-07-06. Movements are filed at the local
 (county or municipal), state, or national level in one schema.
 
 Two pages:
@@ -47,9 +47,9 @@ or more links to news articles or official records.
   title        = {Data Center Opposition Tracker: Organized Opposition to
                   Data Center Installation Across the United States},
   year         = {2026},
-  version      = {1.0},
+  version      = {1.1},
   howpublished = {\url{https://jwklee.github.io/data-center-opposition-tracker/}},
-  note         = {Data through 2026-05-31.
+  note         = {Data through 2026-07-06.
                   Contact: to.jaewook.lee@gmail.com}
 }
 ```

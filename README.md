@@ -5,6 +5,7 @@ Opposition Tracker.
 
 - [Interactive tracker](https://jwklee.github.io/data-center-opposition-tracker/tracker.html)
 - [Movement profile](https://jwklee.github.io/data-center-opposition-tracker/profile.html)
+- [Methodology](https://jwklee.github.io/data-center-opposition-tracker/methodology.html)
 
 Release 1.2.0 covers events through September 30, 2026. Supporting source URLs
 are linked directly from each movement in the tracker. Research records, archived

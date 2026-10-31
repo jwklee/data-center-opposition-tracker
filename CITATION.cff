@@ -5,7 +5,7 @@ type: dataset
 authors:
   - family-names: Lee
     given-names: Jaewook
-version: 1.2.0
-date-released: 2026-10-13
+version: 1.2.1
+date-released: 2026-10-31
 url: "https://jwklee.github.io/data-center-opposition-tracker/"
 repository-code: "https://github.com/jwklee/data-center-opposition-tracker"

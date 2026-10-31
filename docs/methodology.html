@@ -2570,7 +2570,7 @@ vertical-align: -.125em;
 <nav aria-label="Back to tracker" style="display:flex;justify-content:flex-end;align-items:center;margin:0 0 1.25rem;font-size:0.9rem">
   <a href="tracker.html" style="text-decoration:none">← Back to the opposition tracker</a>
 </nav>
-<p>The tracker is a source-verified relational dataset of organized opposition to data center installation in the United States. It covers local, state, and national campaigns in one schema. Release 1.2.0 contains 265 movements, 669 events, 779 actors, and 475 sources through September 30, 2026.</p>
+<p>The tracker is a source-verified relational dataset of organized opposition to data center installation in the United States. It covers local, state, and national campaigns in one schema. Release 1.2.1 contains 265 movements, 670 events, 780 actors, and 476 sources through September 30, 2026.</p>
 <p>This page summarizes how the tracker is built. The project <a href="https://github.com/jwklee/data-center-opposition-tracker/blob/main/README.md">README</a> and the <a href="https://github.com/jwklee/data-center-opposition-tracker/blob/main/CITATION.cff">citation</a> are in the published repository.</p>
 <section id="the-verification-rule" class="level2">
 <h2 class="anchored" data-anchor-id="the-verification-rule">The verification rule</h2>
@@ -2590,18 +2590,18 @@ vertical-align: -.125em;
 </section>
 <section id="tier-2-official-legislation-and-government-records" class="level3">
 <h3 class="anchored" data-anchor-id="tier-2-official-legislation-and-government-records">Tier 2: Official legislation and government records</h3>
-<p>State bill trackers, municipal and county agendas, zoning ordinances, court dockets, and agency releases are searched directly.</p>
+<p>Each state, the District of Columbia, and the federal government gets one search of a bill tracker for data center bills on moratoriums, siting, and tax incentives. Municipal and county agendas, zoning ordinances, court dockets, and agency releases are searched when a lead points to them.</p>
 <p>Example: a legislative search for North Dakota led to the state’s 2026 special session. Legislative Management declined to advance a data center moratorium on August 17, and SB2406, a narrower bill on nondisclosure agreements, failed on Senate second reading, 15–32, on September 3. The movement is recorded as <code>lost</code>, with the legislature’s bill overview and action history as sources.</p>
 </section>
-<section id="tier-3-a-52-jurisdiction-query-grid" class="level3">
-<h3 class="anchored" data-anchor-id="tier-3-a-52-jurisdiction-query-grid">Tier 3: A 52-jurisdiction query grid</h3>
-<p>Legislative and news searches run for every state, the District of Columbia, and the federal jurisdiction, pairing <code>&quot;data center&quot;</code> with terms such as <code>moratorium</code>, <code>opposition</code>, <code>rezoning</code>, <code>protest</code>, <code>hearing</code>, <code>lawsuit</code>, <code>withdrawn</code>, <code>denied</code>, or <code>approved</code>. The result of every grid cell is logged, including cells that produced no new case.</p>
+<section id="tier-3-news-searches-across-52-jurisdictions" class="level3">
+<h3 class="anchored" data-anchor-id="tier-3-news-searches-across-52-jurisdictions">Tier 3: News searches across 52 jurisdictions</h3>
+<p>Each state, the District of Columbia, and the federal government also gets one news search for recent reports of data center opposition, moratoriums, and protests. Directory and aggregator sites are left out so that original local reporting comes first. Every search and its results are logged, including searches that found no new case.</p>
 <p>Example: the Iowa news search surfaced Iowa Public Radio’s report that the Salix City Council rejected a one-year moratorium, 3–2, on August 20, 2026, despite the Salix Guardian Alliance’s call for more study. The <code>lost</code> status applies to that moratorium request; rezoning and annexation litigation over the project were still pending.</p>
 </section>
 <section id="tier-4-snowball-discovery" class="level3">
 <h3 class="anchored" data-anchor-id="tier-4-snowball-discovery">Tier 4: Snowball discovery</h3>
 <p>Names of towns, groups, developers, bills, appeals, and related projects in each verified source are followed up.</p>
-<p>Example: after verifying Eastport, Maine’s 180-day moratorium on land and underwater data centers (August 12, 2026), the follow-up search on the developer, DeepGreen, found the Center for Biological Diversity’s September 24 move to intervene in federal permitting, citing risks to endangered whales. The intervention was added as a <code>legal_action</code> event.</p>
+<p>Example: after verifying Eastport, Maine’s 180-day moratorium on land and underwater data centers (August 12, 2026), following up on the case led to the Center for Biological Diversity’s September 24 move to intervene in federal permitting, citing risks to endangered whales. The intervention was added as a <code>legal_action</code> event.</p>
 </section>
 </section>
 <section id="the-six-phase-update-workflow" class="level2">
@@ -2618,7 +2618,8 @@ vertical-align: -.125em;
 </section>
 <section id="ai-tooling" class="level2">
 <h2 class="anchored" data-anchor-id="ai-tooling">AI tooling</h2>
-<p>No language model is called from any script in the production pipeline. Source capture runs in Python (<code>httpx</code>, <code>trafilatura</code>, <code>fpdf2</code>, <code>pypdf</code>, <code>lxml</code>), and validation runs in R. AI assistance is limited to the authoring session, where it helps draft search queries, suggest candidate events from retrieved pages, and draft documentation. A suggested event is treated like a search result: it enters the dataset only after the underlying source has been opened and the exact claim checked.</p>
+<p>I used AI coding assistants throughout the project: Anthropic’s Claude Fable 5, Opus 4.6, Opus 4.7, and Opus 5.5, through Claude Code. They wrote the Python and R scripts and drafted documentation. In the September 2026 update, an AI session also ran the web searches, recording every query and its results, and read the retrieved pages to draft candidate events. The scripts themselves do not call a language model, so the same inputs produce the same outputs. I check every candidate event against its underlying source before release, including any page that has to be opened by hand because automated retrieval failed. A source that still cannot be verified is removed, along with the claims it supported.</p>
+<p>The search process has changed as the tracker grew, from state-by-state sweeps in the first two releases to fixed query patterns in the September 2026 update.</p>
 </section>
 <section id="reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
@@ -2632,7 +2633,7 @@ vertical-align: -.125em;
 </main>
 <!-- /main column -->
 <footer aria-label="Project credit and release information" style="max-width:1320px;margin:3rem auto 0;padding:1.1rem 0 2rem;border-top:1px solid #d2d2d2;color:#626262;font-size:0.78rem;line-height:1.6">
-  <p style="margin:0"><span>By <a href="https://jwklee.github.io" style="text-underline-offset:3px">Jaewook Lee</a></span> <span aria-hidden="true">·</span> <span>Release 1.2.0</span> <span aria-hidden="true">·</span> <span>Coverage through September 30, 2026</span></p>
+  <p style="margin:0"><span>By <a href="https://jwklee.github.io" style="text-underline-offset:3px">Jaewook Lee</a></span> <span aria-hidden="true">·</span> <span>Release 1.2.1</span> <span aria-hidden="true">·</span> <span>Coverage through September 30, 2026</span></p>
   <p style="margin:0.15rem 0 0"><a href="https://github.com/jwklee/data-center-opposition-tracker/blob/main/CITATION.cff" style="text-underline-offset:3px">Citation</a> <span aria-hidden="true">·</span> <a href="https://github.com/jwklee/data-center-opposition-tracker/commits/main/" style="text-underline-offset:3px">Version history</a></p>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
